@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Using POST METHOD. Listens for endpoint "/save" then runs a function that creates a user with email and name.
-app.post('/save', async (req, res) => {
+app.post('/', async (req, res) => {
     const { email, name } = req.body;
     const user = await prisma.user.create({
         data: {
@@ -22,7 +22,7 @@ app.post('/save', async (req, res) => {
         message: 'User created successfully.'
      });
 });
-
+//okay
 // USING GET METHOD. Listens for endpoint "/user" then runs a function that retrieves user data atleast one or none.
 app.get('/users', async (req, res) => {
     const { email, name } = req.body;
